@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ox/BJMGcqHugtCY0XVpAqUsmob9lOMyy9/aSQgY9TW8=",
+  "Source": "BookSalesSummaryServiceApi",
+  "BasePath": "_content/BookSalesSummaryServiceApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

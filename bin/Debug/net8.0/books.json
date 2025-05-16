@@ -1,0 +1,62 @@
+[
+  {
+    "Title": "Clean Code",
+    "Author": "Robert C. Martin",
+    "CopiesSold": 10,
+    "UnitPrice": 39.99
+  },
+  {
+    "Title": "The Pragmatic Programmer",
+    "Author": "Andy Hunt",
+    "CopiesSold": 5,
+    "UnitPrice": 45.00
+  },
+  {
+    "Title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+    "Author": "Erich Gamma",
+    "CopiesSold": 7,
+    "UnitPrice": 49.99
+  },
+  {
+    "Title": "Refactoring: Improving the Design of Existing Code",
+    "Author": "Martin Fowler",
+    "CopiesSold": 8,
+    "UnitPrice": 47.95
+  },
+  {
+    "Title": "You Don't Know JS: Scope & Closures",
+    "Author": "Kyle Simpson",
+    "CopiesSold": 12,
+    "UnitPrice": 34.99
+  },
+  {
+    "Title": "Introduction to Algorithms",
+    "Author": "Thomas H. Cormen",
+    "CopiesSold": 6,
+    "UnitPrice": 89.50
+  },
+  {
+    "Title": "Cracking the Coding Interview",
+    "Author": "Gayle Laakmann McDowell",
+    "CopiesSold": 15,
+    "UnitPrice": 39.95
+  },
+  {
+    "Title": "Code Complete",
+    "Author": "Steve McConnell",
+    "CopiesSold": 9,
+    "UnitPrice": 42.99
+  },
+  {
+    "Title": "The Mythical Man-Month",
+    "Author": "Frederick P. Brooks Jr.",
+    "CopiesSold": 4,
+    "UnitPrice": 38.50
+  },
+  {
+    "Title": "Structure and Interpretation of Computer Programs",
+    "Author": "Harold Abelson",
+    "CopiesSold": 3,
+    "UnitPrice": 55.00
+  }
+]
