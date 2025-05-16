@@ -38,7 +38,8 @@ app.MapGet("/GetTopSellingBook", async Task<IResult> (IBookService bookService) 
 //get most sold book
 app.MapGet("/SortByRevenue", async Task<IResult> (IBookService bookService) =>
 {
-    return Results.Ok(await bookService.SortByRevenue());
+    var revenue = await bookService.SortByRevenue();
+    return Results.Ok(revenue);
 })
 .WithName("SortByRevenue")
 .WithOpenApi();
