@@ -33,6 +33,15 @@ app.MapGet("/GetTopSellingBook", async Task<IResult> (IBookService bookService) 
 })
 .WithName("GetTopSellingBook")
 .WithOpenApi();
+
+
+//get most sold book
+app.MapGet("/SortByRevenue", async Task<IResult> (IBookService bookService) =>
+{
+    return Results.Ok(await bookService.SortByRevenue());
+})
+.WithName("SortByRevenue")
+.WithOpenApi();
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
