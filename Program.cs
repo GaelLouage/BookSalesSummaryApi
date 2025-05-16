@@ -1,5 +1,7 @@
+using Infra.Models;
 using Infra.Services.Classes;
 using Infra.Services.Interfaces;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +9,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IBookService>(new BookService("books"));
+
+builder.Services.Configure<BookServiceOptions>(
+    builder.Configuration.GetSection("BookService")
+);
+
+builder.Services.AddSingleton<IBookService>(sp =>
+{
+    var options = sp.GetRequiredService<IOptions<BookServiceOptions>>().Value;
+    return new BookService(options.FilePath);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,9 +55,15 @@ app.MapGet("/SortByRevenue", async Task<IResult> (IBookService bookService) =>
 })
 .WithName("SortByRevenue")
 .WithOpenApi();
+
+//get most sold book
+app.MapGet("/GetWhere", async Task<IResult> (IBookService bookService, int quantity) =>
+{
+    var getbyQuantity = await bookService.GetWhere(x => x.CopiesSold <= quantity);
+    return Results.Ok(getbyQuantity);
+})
+.WithName("GetWhere")
+.WithOpenApi();
+
 app.Run();
 
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
